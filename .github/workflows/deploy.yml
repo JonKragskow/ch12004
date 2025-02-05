@@ -1,13 +1,14 @@
 name: deploy-book
 
 # Only run this when the main branch changes
+# or if run manually
 on:
+  workflow_dispatch:
   push: 
     branches:
       - main
     paths:
       - CH12004/**
-
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
   deploy-book:
